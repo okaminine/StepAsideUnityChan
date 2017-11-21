@@ -84,21 +84,6 @@ public class UnityChanController : MonoBehaviour
 			this.myRigidbody.AddForce (this.turnForce, 0, 0);
 		} 
 			
-
-		//Unityちゃんを矢印キーまたはボタンに応じて左右に移動させる（追加）
-		//if (Input.GetKey (KeyCode.LeftArrow) && -this.movableRange < this.transform.position.x) 
-		//{
-	    //左に移動（追加）
-		//this.myRigidbody.AddForce (-this.turnForce, 0, 0);
-		//} 
-		//else if (Input.GetKey (KeyCode.RightArrow) && this.transform.position.x < this.movableRange)
-		//{
-			//右に移動（追加）
-		//	this.myRigidbody.AddForce (this.turnForce, 0, 0);
-		//} 
-
-
-
 		//Jumpステートの場合はJumpにfalseをセットする（追加）
 		if (this.myAnimator.GetCurrentAnimatorStateInfo (0).IsName ("Jump")) 
 		{
@@ -155,9 +140,10 @@ public class UnityChanController : MonoBehaviour
 			Destroy (other.gameObject);
 
 		}
-			
+
+		//オブジェクトが画面外に出たら消える
 		if (other.transform.position.z < this.transform.position.z)
-			Destroy (other.gameObject);			
+		Destroy (other.gameObject);			
 	}
 		
 	//ジャンプボタンを押した場合の処理（追加）
