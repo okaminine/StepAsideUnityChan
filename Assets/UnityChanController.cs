@@ -141,9 +141,7 @@ public class UnityChanController : MonoBehaviour
 
 		}
 
-		//オブジェクトが画面外に出たら消える
-		if (other.transform.position.z < this.transform.position.z)
-		Destroy (other.gameObject);			
+
 	}
 		
 	//ジャンプボタンを押した場合の処理（追加）
